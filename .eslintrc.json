@@ -1,0 +1,46 @@
+{
+    "extends": "airbnb-base",
+    // Allow the following global variables
+    "env": {
+        "browser": true, // browser global variables
+        "node": true, // Node.js global variables and Node.js scoping.
+        "mocha": true // adds all of the Mocha testing global variables.
+    },
+    "plugins": [
+        "chai-friendly"
+    ],
+    "rules": {
+        "no-unused-expressions": 0,
+        "chai-friendly/no-unused-expressions": 2,
+        "no-console": "off",
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "comma-dangle": "off",
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": {
+                    "minProperties": 1
+                },
+                "ObjectPattern": {
+                    "multiline": false
+                }
+            }
+        ],
+        "max-len": [
+            "error",
+            140
+        ],
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": true
+            }
+        ]
+    }
+}

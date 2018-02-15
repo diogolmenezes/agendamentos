@@ -1,0 +1,82 @@
+{
+    "app": {
+        "name": "atendimento-backend",
+        "baseRoute": "/atendimento-backend",
+        "port": 8094
+    },
+    "db": {
+        "url": "mongodb://localhost:27017/atendimento-backend",
+        "options": {
+            "useMongoClient": true,
+            "poolSize": 10
+        }
+    },
+    "redis": {
+        "host": "localhost",
+        "port": 6379
+    },
+    "log": {
+        "debug": true,
+        "bunyan": {
+            "name": "Application",
+            "streams": [
+                {
+                    "level": "debug",
+                    "type": "rotating-file",
+                    "path": "log/{hostname}.log",
+                    "period": "1d",
+                    "count": 3
+                }
+            ]
+        }
+    },
+    "authorization": {
+        "enabled": true,
+        "scheme": "Bearer",
+        "jwt": {
+            "secret": "49b4e2f9-ec31-4758-bae5-741a80e0e8de",
+            "expiresIn": "1h"
+        }
+    },
+    "audit": {
+        "enabled": true,
+        "printLog": true,
+        "bunyan": {
+            "name": "Audit",
+            "streams": [
+                {
+                    "level": "debug",
+                    "type": "rotating-file",
+                    "path": "log/audit.log",
+                    "period": "1d",
+                    "count": 3
+                }
+            ]
+        }
+    },
+    "origin": {
+        "ignore": ["/healthcheck", "/doc"],
+        "require": {
+            "application": true,
+            "channel": true,
+            "device": false
+        }
+    },
+    "rest": {
+        "servico1": {
+            "timeout": 3,
+            "endpoint": "http://..."
+        },
+        "servico2": {
+            "timeout": 3,
+            "endpoint": "http://..."
+        }
+    },
+    "soap": {
+        "servico1": {
+            "timeout": 5,
+            "wsdl": "http://...?wsdl",
+            "endpoint": "http://..."
+        }
+    }
+}
