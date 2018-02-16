@@ -5,6 +5,6 @@ const autorizacao = require('../../config/custom-authorization');
 
 // Através do objeto info obtemos informações que nos possibilitam ser flexiveis para criar rotas mais elegantes e significativas:
 // { base: '/atendimento-backend', module: 'cliente', full: '/atendimento-backend/cliente' }
-const { full } = route.info(__filename);
+const info = route.info(__filename);
 
-server.get(`${full}/:nome`, autorizacao.protect.bind(autorizacao), controller.carregar.bind(controller));
+server.get(`${info.base}/${info.module}s/`, autorizacao.protect.bind(autorizacao), controller.carregar.bind(controller));

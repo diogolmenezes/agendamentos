@@ -12,13 +12,12 @@
     "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha ./api/modules/*/test/*/*.js",
     "lint": "clear;./node_modules/.bin/eslint ./app",
     "doc:build": "gulp swagger",
-    "doc:edit": "swagger project edit",
-	"wizard": "node ./api/config/wizard",
-	"test:wizard": "clear;./node_modules/mocha/bin/mocha ./test/wizard_test"
+    "doc:edit": "swagger project edit"
   },
   "author": "Oi Digital",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.20.1",
     "mongoose": "^4.13.5",
     "node-fetch": "^1.7.3",
     "oi-node-api-framework": "file:///home/dmenezes/projetos/oi/framework"
