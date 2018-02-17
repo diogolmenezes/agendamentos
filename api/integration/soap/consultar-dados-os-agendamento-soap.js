@@ -1,5 +1,4 @@
 const { BaseSoap, config } = require('oi-node-api-framework');
-const util = require('util');
 
 class ConsultarDadosOSAgendamentoSoap extends BaseSoap {
     constructor() {

@@ -3,7 +3,13 @@
         "name": "atendimento-backend",
         "baseRoute": "/atendimento-backend",
         "port": 8094
-    },    
+    }, 
+    "cors": {
+        "preflightMaxAge": 5,
+        "origins": ["*"],
+        "allowHeaders": ["x-cpf", "x-origin-channel", "x-origin-application"],
+        "exposeHeaders": []
+    },
     "log": {
         "debug": true,
         "bunyan": {

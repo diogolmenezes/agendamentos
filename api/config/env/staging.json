@@ -4,6 +4,12 @@
         "baseRoute": "/atendimento-backend",
         "port": 8090
     },
+    "cors": {
+        "preflightMaxAge": 5,
+        "origins": [],
+        "allowHeaders": ["x-cpf", "x-origin-channel", "x-origin-application"],
+        "exposeHeaders": []
+    },
     "db": {
         "url": "mongodb://localhost:27017/atendimento-backend",
         "options": {
